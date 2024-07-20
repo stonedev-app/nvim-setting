@@ -39,6 +39,10 @@ require("lazy").setup({
           {mode = "n", "<C-n>", "<cmd>NvimTreeToggle<cr>", desc = "Toggle NvimTree with Ctrl+n"},
       },
     },
+    { 
+      'neoclide/coc.nvim',
+      branch = "release",
+    },
   },
   -- Configure any other settings here. See the documentation for more details.
   -- colorscheme that will be used when installing plugins.
