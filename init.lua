@@ -25,6 +25,7 @@ vim.g.maplocalleader = "\\"
 require("lazy").setup({
   spec = {
     -- add your plugins here
+    -- FileExplorer
     {
       "nvim-tree/nvim-tree.lua",
       version = "*",
@@ -39,10 +40,23 @@ require("lazy").setup({
           {mode = "n", "<C-n>", "<cmd>NvimTreeToggle<cr>", desc = "Toggle NvimTree with Ctrl+n"},
       },
     },
+    -- CodeCompletion
     { 
       'neoclide/coc.nvim',
       branch = "release",
     },
+    -- ColorScheme
+    {
+      'sainnhe/gruvbox-material',
+      lazy = false,
+      priority = 1000,
+      config = function()
+        -- Optionally configure and load the colorscheme
+        -- directly inside the plugin declaration.
+        vim.g.gruvbox_material_enable_italic = true
+        vim.cmd.colorscheme('gruvbox-material')
+      end
+    }
   },
   -- Configure any other settings here. See the documentation for more details.
   -- colorscheme that will be used when installing plugins.
