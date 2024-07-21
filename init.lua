@@ -44,17 +44,6 @@ require("lazy").setup({
     { 
       'neoclide/coc.nvim',
       branch = "release",
-      keys = {
-        -- Use `[g` and `]g` to navigate diagnostics
-        -- Use `:CocDiagnostics` to get all diagnostics of current buffer in location list
-        {mode = "n", "[g", "<Plug>(coc-diagnostic-prev)", desc = "Go to diagnostic prev with [g"},
-        {mode = "n", "]g", "<Plug>(coc-diagnostic-next)", desc = "Go to diagnostic next with ]g"},
-        -- GoTo code navigation
-        {mode = "n", "gd", "<Plug>(coc-definition)", desc = "Go to definition with gd"},
-        {mode = "n", "gy", "<Plug>(coc-type-definition)", desc = "Go to type definition with gy"},
-        {mode = "n", "gi", "<Plug>(coc-implementation)", desc = "Go to implementation with gi"},
-        {mode = "n", "gr", "<Plug>(coc-references)", desc = "Go to references with gr"},
-      },
     },
     -- ColorScheme
     {
