@@ -45,6 +45,10 @@ require("lazy").setup({
       'neoclide/coc.nvim',
       branch = "release",
     },
+    -- rust.vim
+    {
+      'rust-lang/rust.vim'
+    },
     -- ColorScheme
     {
       'sainnhe/gruvbox-material',
