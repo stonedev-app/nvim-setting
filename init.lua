@@ -44,6 +44,8 @@ keyset("i", "<cr>", [[coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r
 
 -- Use <c-j> to trigger snippets
 keyset("i", "<c-j>", "<Plug>(coc-snippets-expand-jump)")
+-- Use <c-j> to trigger snippets back
+keyset("i", "<c-k>", "<Plug>(coc-snippets-expand-jump-back)")
 -- Use <c-space> to trigger completion
 keyset("i", "<c-space>", "coc#refresh()", {silent = true, expr = true})
 
