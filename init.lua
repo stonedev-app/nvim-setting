@@ -60,6 +60,16 @@ require("lazy").setup({
         vim.g.gruvbox_material_enable_italic = true
         vim.cmd.colorscheme('gruvbox-material')
       end
+    },
+    -- Terminal
+    {
+      'akinsho/toggleterm.nvim',
+      version = "*",
+      config = function()
+        require("toggleterm").setup {
+          open_mapping = [[<c-\>]], -- or { [[<c-\>]], [[<c-¥>]] } if you also use a Japanese keyboard.
+        }
+      end,
     }
   },
   -- Configure any other settings here. See the documentation for more details.
@@ -258,3 +268,17 @@ keyset("n", "<space>j", ":<C-u>CocNext<cr>", opts)
 keyset("n", "<space>k", ":<C-u>CocPrev<cr>", opts)
 -- Resume latest coc list
 keyset("n", "<space>p", ":<C-u>CocListResume<cr>", opts)
+
+-- toggleterm setting for lazygit
+local Terminal = require("toggleterm.terminal").Terminal
+local lazygit = Terminal:new({
+  cmd = "lazygit",
+  direction = "float",
+  hidden = true
+})
+
+function _lazygit_toggle()
+  lazygit:toggle()
+end
+
+vim.api.nvim_set_keymap("n", "lg", "<cmd>lua _lazygit_toggle()<CR>", { noremap = true, silent = true })
