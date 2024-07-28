@@ -75,6 +75,13 @@ require("lazy").setup({
           open_mapping = [[<c-\>]], -- or { [[<c-\>]], [[<c-¥>]] } if you also use a Japanese keyboard.
         }
       end,
+    },
+    -- Comment
+    {
+      'numToStr/Comment.nvim',
+      opts = {
+        -- add any options here
+      }
     }
   },
   -- Configure any other settings here. See the documentation for more details.
