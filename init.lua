@@ -6,6 +6,11 @@ set.number = true
 set.tabstop = 2
 set.shiftwidth = 2
 set.expandtab = true
+-- Prevent comment symbol "//" from being inserted on the next line when breaking a line or inserting a new line
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = '*',
+  command = 'setlocal formatoptions-=r comments-=://'
+})
 
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
