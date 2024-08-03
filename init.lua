@@ -82,10 +82,6 @@ require("lazy").setup({
       opts = {
         -- add any options here
       }
-    },
-    -- vim-pio
-    {
-      'normen/vim-pio'
     }
   },
   -- Configure any other settings here. See the documentation for more details.
