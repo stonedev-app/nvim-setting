@@ -82,6 +82,10 @@ require("lazy").setup({
       opts = {
         -- add any options here
       }
+    },
+    -- statusline plugin
+    {
+      'itchyny/lightline.vim'
     }
   },
   -- Configure any other settings here. See the documentation for more details.
