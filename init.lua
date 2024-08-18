@@ -85,7 +85,17 @@ require("lazy").setup({
     },
     -- statusline plugin
     {
-      'itchyny/lightline.vim'
+      'itchyny/lightline.vim',
+      config = function()
+        vim.g.lightline = {
+          colorscheme = 'wombat',
+          active = { left = { { 'mode', 'paste' }, { 'cocstatus', 'cocfunc', 'readonly', 'filename', 'modified' } } },
+          component_function = {
+            cocstatus = 'coc#status',
+            cocfunc = "coc#rpc#status"
+          }
+        }
+      end
     }
   },
   -- Configure any other settings here. See the documentation for more details.
@@ -267,7 +277,7 @@ vim.api.nvim_create_user_command("OR", "call CocActionAsync('runCommand', 'edito
 -- Add (Neo)Vim's native statusline support
 -- NOTE: Please see `:h coc-status` for integrations with external plugins that
 -- provide custom statusline: lightline.vim, vim-airline
-vim.opt.statusline:prepend("%{coc#status()}%{get(b:,'coc_current_function','')}")
+-- vim.opt.statusline:prepend("%{coc#status()}%{get(b:,'coc_current_function','')}")
 
 -- Mappings for CoCList
 -- code actions and coc stuff
